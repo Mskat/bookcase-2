@@ -2,11 +2,13 @@
   "name": "server",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "src/server.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node dist/server.js",
+    "build": "tsc -p . && ncp src/schema dist/schema",
     "start:dev": "npm run build:dev",
-    "build:dev": "nodemon src/schema/server.ts --exec ts-node src/schema/server.ts -e ts,graphql"
+    "build:dev": "nodemon src/server.ts --exec ts-node src/server.ts -e ts,graphql"
   },
   "repository": {
     "type": "git",
